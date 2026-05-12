@@ -1,0 +1,53 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtual env
+.venv/
+venv/
+env/
+
+# Env
+.env
+.env.local
+.env.*.local
+
+# Data
+data/qdrant/
+data/cache/
+data/pdfs/*.pdf
+*.db
+*.sqlite
+
+# Models (HF cache)
+models/
+.cache/
+
+# IDE / Tooling
+.vscode/
+.idea/
+*.swp
+.claude/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Eval outputs
+eval/reports/*.json
+eval/reports/*.html
+!eval/reports/.gitkeep
+
+# Notebooks
+.ipynb_checkpoints/

@@ -1,0 +1,32 @@
+services:
+  qdrant:
+    image: qdrant/qdrant:latest
+    container_name: documind-qdrant
+    ports:
+      - "6333:6333"
+      - "6334:6334"
+    volumes:
+      - qdrant_data:/qdrant/storage
+    restart: unless-stopped
+
+  documind:
+    build: .
+    container_name: documind-api
+    ports:
+      - "8000:8000"
+    env_file: .env
+    environment:
+      # Override to use the in-network Qdrant service, not localhost
+      QDRANT_URL: http://qdrant:6333
+    volumes:
+      # Reuse cached chunks + BM25 indexes built on the host
+      - ./data:/app/data
+      # Persist downloaded embedding model across rebuilds
+      - hf_cache:/app/.cache/huggingface
+    depends_on:
+      - qdrant
+    restart: unless-stopped
+
+volumes:
+  qdrant_data:
+  hf_cache:

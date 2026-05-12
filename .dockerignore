@@ -1,0 +1,44 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtual env
+.venv/
+venv/
+env/
+
+# Local data (mount as volume instead of baking in)
+data/qdrant/
+data/cache/
+*.db
+*.sqlite
+
+# HF cache (large)
+.cache/
+models/
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Eval outputs
+eval/reports/*
+
+# Notebooks
+.ipynb_checkpoints/
+notebooks/
+
+# Docs/configs not needed in image
+README.md
+*.md
+.git/
+.gitignore
