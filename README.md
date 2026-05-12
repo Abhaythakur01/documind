@@ -5,7 +5,7 @@ colorFrom: yellow
 colorTo: gray
 sdk: streamlit
 sdk_version: "1.38.0"
-app_file: ui/app.py
+app_file: ui/main.py
 pinned: false
 license: mit
 short_description: "Multi-modal RAG over PDFs: hybrid retrieval, cited answers"
@@ -82,7 +82,7 @@ python -m app.ingest.run data/pdfs/attention.pdf
 
 # 5. Run the app
 uvicorn app.api.main:app --reload  # backend, port 8000
-streamlit run ui/app.py            # frontend, port 8501
+streamlit run ui/main.py           # frontend, port 8501
 ```
 
 ## Project structure
